@@ -47,6 +47,7 @@ I enjoy turning ideas and real-world problems into **clean, practical, and user-
 * 🎓 B.Sc. in **Software Engineering** — Daffodil International University
 * 📍 Dhaka, Bangladesh
 * 💻 Focused on **Web & Frontend Development**
+* 🔐 Exploring **Cybersecurity & Security Fundamentals**
 * ⚛️ Building with **JavaScript, React, Node.js, SQL & Supabase**
 * 🌱 Currently learning the **MERN Stack**
 * 🧠 Strengthening **DSA, problem solving & software engineering fundamentals**
@@ -241,7 +242,7 @@ A C-based management system developed as part of academic programming coursework
 ## 📈 GitHub Activity
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=nifadhasanh21&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github&include_all_commits=true" alt="Nifad's GitHub Stats" />
+  <img src="https://github-readme-stats.vercel.app/api?username=nifadhasanh21&show_icons=true&theme=github_dark&hide_border=true&rank_icon=github&count_private=true&cache_seconds=1800" alt="Nifad's GitHub Stats" />
 </p>
 
 <p align="center">
@@ -249,22 +250,25 @@ A C-based management system developed as part of academic programming coursework
 </p>
 
 <p align="center">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nifadhasanh21&layout=compact&theme=github_dark&hide_border=true" alt="Top Languages" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=nifadhasanh21&layout=compact&theme=github_dark&hide_border=true&cache_seconds=1800" alt="Top Languages" />
 </p>
 
 <p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nifadhasanh21&theme=github-compact&hide_border=true" alt="Contribution Graph" width="95%"/>
+  <img src="https://github-readme-activity-graph.vercel.app/graph?username=nifadhasanh21&theme=github-compact&hide_border=true&custom_title=Contribution%20Graph" alt="Contribution Graph" width="95%"/>
 </p>
 
 <!--
-  Animated contribution snake — requires a one-time GitHub Action in the repo
-  (platane/snk) to generate github-contribution-grid-snake.svg on each push.
-  Once the workflow runs, this line will render an animated snake eating your
-  contribution graph.
--->
+  Animated contribution snake — commented out for now because it needs a
+  one-time GitHub Action in your nifadhasanh21/nifadhasanh21 repo (using
+  platane/snk) to generate the SVG on each push. Until that workflow runs
+  at least once, this image has nothing to load and will show as broken.
+  Uncomment the block below after adding the workflow (see the bottom of
+  this file for the exact steps).
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/nifadhasanh21/nifadhasanh21/output/github-contribution-grid-snake-dark.svg" alt="Contribution Snake" width="95%"/>
 </p>
+-->
 
 <img src="https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.gif" width="100%">
 
@@ -355,3 +359,38 @@ My goal is to keep learning, keep building, and gradually turn from a **student 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:58A6FF,50:1d4ed8,100:0f172a&height=120&section=footer" width="100%"/>
 
 </div>
+
+<!--
+  HOW TO ENABLE THE ANIMATED CONTRIBUTION SNAKE
+  ------------------------------------------------
+  1. In your nifadhasanh21/nifadhasanh21 repo, create the file:
+     .github/workflows/snake.yml
+  2. Paste this content into it:
+
+       name: generate-snake
+       on:
+         schedule:
+           - cron: "0 */6 * * *"
+         workflow_dispatch: {}
+         push:
+           branches: [ main ]
+       jobs:
+         generate:
+           runs-on: ubuntu-latest
+           steps:
+             - uses: Platane/snk@v3
+               with:
+                 github_user_name: nifadhasanh21
+                 outputs: |
+                   dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+                   dist/github-contribution-grid-snake.svg
+             - uses: crazy-max/ghaction-github-pages@v4
+               with:
+                 target_branch: output
+                 build_dir: dist
+               env:
+                 GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  3. Commit it and run the workflow once (Actions tab → generate-snake → Run workflow).
+  4. Once it finishes, an "output" branch appears with the SVG files.
+  5. Uncomment the "Animated contribution snake" block above in this README.
+-->
